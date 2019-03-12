@@ -8,7 +8,7 @@
   "repository": "https://github.com/rpandey89/BCND-C6-Exercises",
   "license": "MIT",
   "scripts": {
-    "test": "truffle test test/ExerciseC6A.js test/ExerciseC6B.js"
+    "test": "truffle test"
   },
   "author": "Rahul Pandey",
   "devDependencies": {
