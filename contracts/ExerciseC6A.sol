@@ -6,7 +6,6 @@ contract ExerciseC6A {
     /*                                       DATA VARIABLES                                     */
     /********************************************************************************************/
 
-
     struct UserProfile {
         bool isRegistered;
         bool isAdmin;
