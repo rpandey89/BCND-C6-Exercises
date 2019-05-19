@@ -1,9 +1,11 @@
 var Test = require('../config/testConfig.js')
-
+var ExerciseC6CApp = artifacts.require('ExerciseC6CApp')
 contract('ExerciseC6C', async accounts => {
   var config
+  var exerciseC6CApp
   before('setup contract', async () => {
     config = await Test.Config(accounts)
+    exerciseC6CApp = await ExerciseC6CApp.new(config.exerciseC6C.address)
   })
 
   it('can register Employee, add sale and calculate bonus', async () => {
@@ -22,7 +24,7 @@ contract('ExerciseC6C', async accounts => {
       employee.isAdmin,
       employee.address
     )
-    await config.exerciseC6C.addSale(employee.id, 400)
+    await exerciseC6CApp.addSale(employee.id, 400)
     let bonus = await config.exerciseC6C.getEmployeeBonus.call(employee.id)
 
     // ASSERT

@@ -1,7 +1,7 @@
-var HDWalletProvider = require('truffle-hdwallet-provider');
+var HDWalletProvider = require('truffle-hdwallet-provider')
 
 // Be sure to match this mnemonic with that in Ganache!
-var mnemonic = 'first picnic foil resemble paddle august state render scrap tourist swim number';
+var mnemonic = ''
 
 module.exports = {
   networks: {
@@ -15,7 +15,7 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: "^0.4.25"
+      version: '^0.4.25'
     }
   }
-};
+}

@@ -12,6 +12,7 @@ contract ExerciseC6CApp {
 
 
     address private contractOwner;              // Account used to deploy contract
+    ExerciseC6C exerciseC9C;
 
     modifier requireContractOwner()
     {
@@ -19,9 +20,10 @@ contract ExerciseC6CApp {
         _;
     }
 
-    constructor() public
+    constructor(address dataContract) public
     {
         contractOwner = msg.sender;
+        exerciseC9C = ExerciseC6C(dataContract);
     }
 
     function calculateBonus(uint256 sales) internal view requireContractOwner returns(uint256)
@@ -39,11 +41,12 @@ contract ExerciseC6CApp {
 
     function addSale(string id, uint256 amount) external requireContractOwner
     {
-        updateEmployee(id, amount, calculateBonus(amount));
+        exerciseC9C.updateEmployee(id, amount, calculateBonus(amount));
     }
 
-    function updateEmployee(string id, uint256 sales, uint256 bonus) internal requireContractOwner
-    {}
+}
 
+contract ExerciseC6C {
+function updateEmployee(string id, uint256 sales, uint256 bonus) external;
 }
 
